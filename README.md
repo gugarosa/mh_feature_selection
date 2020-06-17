@@ -52,7 +52,7 @@ After conducting the optimization task, one need to process its history into rea
 
 ```python process_history.py -h```
 
-*Note that this scripts converts the .pkloptimization history into readable .txt outputs.*
+*Note that this scripts converts the .pkl optimization history into readable .txt outputs.*
 
 ### Classify Selected Features
 
