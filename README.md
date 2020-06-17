@@ -11,18 +11,18 @@ If you use our work to fulfill any of your needs, please cite us:
 
 ## Structure
 
-    * `data`: Folder containing the OPF file format datasets;
-    * `history`: Folder for saving the output files, such as `.pkl` and `.txt`;
-    * `models`
-        * `classifiers.py`: Defines the possible classifiers that can be used;
-        * `heuristics.py`: Defines the possible meta-heuristics that can be used;
-        * `transfers.py`: Defines the possible transfer functions that can be used;
-    * `opt`
-        * `target.py`: Provides the objective function that will be optimized;
-        * `wrapper.py`: Wraps the optimization task into a single method;
-    * `utils`
-        * `loader.py`: Loads OPF file format datasets;
-        * `outputter.py`: Converts the optimization history into readable output files.
+ * `data`: Folder containing the OPF file format datasets;
+ * `history`: Folder for saving the output files, such as `.pkl` and `.txt`;
+ * `models`
+   * `classifiers.py`: Defines the possible classifiers that can be used;
+   * `heuristics.py`: Defines the possible meta-heuristics that can be used;
+   * `transfers.py`: Defines the possible transfer functions that can be used;
+ * `opt`
+   * `target.py`: Provides the objective function that will be optimized;
+   * `wrapper.py`: Wraps the optimization task into a single method;
+ * `utils`
+   * `loader.py`: Loads OPF file format datasets;
+   * `outputter.py`: Converts the optimization history into readable output files.
 
 ## Package Guidelines
 
