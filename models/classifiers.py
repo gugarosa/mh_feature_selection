@@ -25,13 +25,13 @@ class Classifier:
 
 # Defines a classifier dictionary constant with the possible values
 CLF = dict(
-    dt=Classifier(DecisionTreeClassifier()),
-    linear_svc=Classifier(LinearSVC()),
-    lr=Classifier(LogisticRegression()),
-    nb=Classifier(GaussianNB()),
-    opf=Classifier(SupervisedOPF()),
-    rf=Classifier(RandomForestClassifier()),
-    svc=Classifier(SVC()),
+    dt=Classifier(DecisionTreeClassifier),
+    linear_svc=Classifier(LinearSVC),
+    lr=Classifier(LogisticRegression),
+    nb=Classifier(GaussianNB),
+    opf=Classifier(SupervisedOPF),
+    rf=Classifier(RandomForestClassifier),
+    svc=Classifier(SVC),
 )
 
 

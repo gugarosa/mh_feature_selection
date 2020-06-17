@@ -1,5 +1,6 @@
 from sklearn.metrics import accuracy_score
-from transfer_functions import T1
+
+import opt.transfers as t
 
 
 def feature_selection(obj, X_train, Y_train, X_val, Y_val):
@@ -32,7 +33,12 @@ def feature_selection(obj, X_train, Y_train, X_val, Y_val):
         x = w[:, 0]
 
         # Passing down to the transfer function
-        features = T1(x)
+        features = t.T1(x)
+
+        # Checking if array is empty
+        if not any(features):
+            # If yes, penalizes the objective function
+            return 1
 
         # Remaking training and validation sets with selected features
         X_train_selected = X_train[:, features]
