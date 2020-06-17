@@ -1,7 +1,7 @@
 import argparse
 
 import numpy as np
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 
 import models.classifiers as c
 import utils.loader as l
@@ -15,8 +15,7 @@ def get_arguments():
 
     """
 
-    # Creates the ArgumentParser
-    parser = argparse.ArgumentParser(usage='Test pre-selected features over the testing set.')
+    parser = argparse.ArgumentParser(usage='Classify pre-selected features over the testing set.')
 
     parser.add_argument('clf', help='Classifier identifier', choices=['lr'])
 
@@ -56,8 +55,12 @@ if __name__ == '__main__':
     # Predicts new data
     preds = clf.predict(X_val_selected)
 
-    # Calculating accuracy
+    # Calculating metrics
     acc = accuracy_score(Y_val, preds)
+    f1 = f1_score(Y_val, preds, average='weighted')
+    precision = precision_score(Y_val, preds, average='weighted')
+    recall = recall_score(Y_val, preds, average='weighted')
 
     # Saving final accuracy into an output file
-    np.savetxt(input_path + '_test.txt', [acc])
+    np.savetxt(input_path + '_test.txt', [acc, f1, precision, recall],
+               header='Accuracy (1) | F1 (1) | Precision (1) | Recall (1)')

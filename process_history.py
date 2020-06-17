@@ -15,9 +15,7 @@ def get_arguments():
 
     """
 
-    # Creates the ArgumentParser
-    parser = argparse.ArgumentParser(
-        usage='Process an optimization history into readable outputs.')
+    parser = argparse.ArgumentParser(usage='Process an optimization history into readable outputs.')
 
     parser.add_argument('input_file', help='Optimization history file', type=str)
 
@@ -48,7 +46,8 @@ if __name__ == '__main__':
     # Opening the output .txt file
     with open(input_path + '_val.txt', 'w') as output_file:
         # Saving selected features
-        np.savetxt(output_file, features)
+        np.savetxt(output_file, features,
+                   header=f'Selected_Features ({features.shape[0]}) | N_Selected_Features (1) | Fitness (1) | Time (1)')
 
         # Saving the number of selected features
         np.savetxt(output_file, [n_features])
