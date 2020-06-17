@@ -41,7 +41,7 @@ if __name__ == '__main__':
     X_train, X_val, Y_train, Y_val = l.load_dataset()
 
     # Loading the selected features
-    features = np.loadtxt(input_path + '_val.txt')[:-1].astype(bool)
+    features = np.loadtxt(input_path + '_val.txt')[:-3].astype(bool)
 
     # Remaking training and testing sets with selected features
     X_train_selected = X_train[:, features]

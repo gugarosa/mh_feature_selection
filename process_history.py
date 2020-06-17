@@ -43,12 +43,18 @@ if __name__ == '__main__':
     transfer = f.get_transfer(args.transfer).obj
 
     # Process the optimization history
-    features, fit = o.process_history(history, transfer)
+    features, n_features, fit, time = o.process_history(history, transfer)
 
     # Opening the output .txt file
     with open(input_path + '_val.txt', 'w') as output_file:
         # Saving selected features
         np.savetxt(output_file, features)
 
+        # Saving the number of selected features
+        np.savetxt(output_file, [n_features])
+
         # Saving fitness
         np.savetxt(output_file, [fit])
+
+        # Saving optimization time
+        np.savetxt(output_file, [time])

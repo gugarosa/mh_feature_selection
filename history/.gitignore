@@ -1,2 +1,3 @@
-# Ignoring all Opytimizer's outputs
+# Ignoring all Opytimizer's and processed outputs
 *.pkl
+*.txt

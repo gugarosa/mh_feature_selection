@@ -11,12 +11,18 @@ def process_history(history, transfer):
     """
 
     # Gathering the best agent's position as a numpy array
-    best = np.asarray(history.best_agent[-1][0])
-
-    # Gathering fitness as well
-    fit = history.best_agent[-1][1]
+    features = np.asarray(history.best_agent[-1][0])
 
     # Passing it down the transfer function and transforms it into an integer
-    transferred_best = transfer(best).astype(int)
+    selected_features = transfer(features).astype(int)
 
-    return transferred_best, fit
+    # Gathering the number of selected features
+    n_selected_features = np.count_nonzero(selected_features)
+
+    # Gathering fitness
+    fit = history.best_agent[-1][1]
+
+    # Gathering optimization time
+    time = history.time
+
+    return selected_features, n_selected_features, fit, time
