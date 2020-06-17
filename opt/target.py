@@ -1,13 +1,12 @@
 from sklearn.metrics import accuracy_score
 
-import opt.transfers as t
 
-
-def feature_selection(obj, X_train, Y_train, X_val, Y_val):
+def feature_selection(obj, transfer, X_train, Y_train, X_val, Y_val):
     """Wraps the feature selection task for optimization purposes.
 
     Args:
         obj (Classifier): A classifier instance.
+        transfer (callable): A transfer function used to map continuous to binary data.
         X_train (np.array): An array of training data.
         Y_train (np.array): An array of training labels.
         X_val (np.array): An array of validation data.
@@ -33,7 +32,7 @@ def feature_selection(obj, X_train, Y_train, X_val, Y_val):
         x = w[:, 0]
 
         # Passing down to the transfer function
-        features = t.T1(x)
+        features = transfer(x)
 
         # Checking if array is empty
         if not any(features):

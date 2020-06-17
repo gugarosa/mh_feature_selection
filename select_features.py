@@ -4,6 +4,7 @@ import numpy as np
 
 import models.classifiers as c
 import models.heuristics as h
+import models.transfers as f
 import opt.target as t
 import opt.wrapper as w
 import utils.loader as l
@@ -24,9 +25,11 @@ def get_arguments():
 
     parser.add_argument('clf', help='Classifier identifier', choices=['lr'])
 
+    parser.add_argument('transfer', help='Transfer function identifier', choices=['t1'])
+
     parser.add_argument('-n_agents', help='Number of meta-heuristic agents', type=int, default=10)
 
-    parser.add_argument('-n_iter', help='Number of meta-heuristic iterations', type=int, default=15)
+    parser.add_argument('-n_iter', help='Number of meta-heuristic iterations', type=int, default=3)
 
     parser.add_argument('-seed', help='Seed identifier', type=int, default=0)
 
@@ -43,11 +46,12 @@ if __name__ == '__main__':
     # Loading the data
     X_train, X_val, Y_train, Y_val = l.load_dataset()
 
-    # Gathering the classifier
+    # Gathering the classifier and the transfer function
     clf = c.get_clf(args.clf).obj
+    transfer = f.get_transfer(args.transfer).obj
 
     # Initializes the optimization target
-    opt_fn = t.feature_selection(clf, X_train, Y_train, X_val, Y_val)
+    opt_fn = t.feature_selection(clf, transfer, X_train, Y_train, X_val, Y_val)
 
     # Gathering the optimizer (meta-heuristic) and its arguments
     mh = h.get_heuristic(args.mh).obj
@@ -60,3 +64,6 @@ if __name__ == '__main__':
 
     # Runs the optimization task
     history = w.optimize(mh, opt_fn, n_agents, n_variables, n_iterations, lb, ub, hyperparams)
+
+    # Saving the optimization history
+    history.save(f'history/{args.mh}_{args.clf}_{args.transfer}_{n_agents}ag_{n_iterations}iter_{args.seed}.pkl')
