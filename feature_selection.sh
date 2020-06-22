@@ -12,7 +12,7 @@ TEST_SPLIT=0.2
 MH=("pso")
 
 # Defining the classifier to be used
-CLF="lr"
+CLF="opf"
 
 # Defining the transfer function to be used
 TF="t1"

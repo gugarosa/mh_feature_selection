@@ -19,7 +19,7 @@ def get_arguments():
 
     parser.add_argument('dataset', help='Dataset identifier', choices=['wine'])
 
-    parser.add_argument('clf', help='Classifier identifier', choices=['lr'])
+    parser.add_argument('clf', help='Classifier identifier', choices=['opf'])
 
     parser.add_argument('features', help='Selected features file', type=str)
 

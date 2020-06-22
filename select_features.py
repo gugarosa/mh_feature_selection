@@ -23,9 +23,9 @@ def get_arguments():
 
     parser.add_argument('dataset', help='Dataset identifier', choices=['wine'])
 
-    parser.add_argument('mh', help='Meta-heuristic identifier', choices=['pso'])
+    parser.add_argument('mh', help='Meta-heuristic identifier', choices=['abc', 'ba', 'de', 'fa', 'ga', 'hs', 'pso', 'sca'])
 
-    parser.add_argument('clf', help='Classifier identifier', choices=['lr'])
+    parser.add_argument('clf', help='Classifier identifier', choices=['opf'])
 
     parser.add_argument('transfer', help='Transfer function identifier', choices=['t1'])
 

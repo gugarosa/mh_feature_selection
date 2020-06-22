@@ -1,4 +1,5 @@
-from opytimizer.optimizers.swarm import pso
+from opytimizer.optimizers.evolutionary import de, ga, hs
+from opytimizer.optimizers.swarm import abc, ba, fa, pso, sca
 
 
 class Heuristic:
@@ -24,7 +25,14 @@ class Heuristic:
 
 # Defines an heuristic dictionary constant with the possible values
 HEURISTIC = dict(
-    pso=Heuristic(pso.PSO, dict(w=0.7, c1=1.7, c2=1.7))
+    abc=Heuristic(abc.ABC, dict(n_trials=10)),
+    ba=Heuristic(ba.BA, dict(f_min=0, f_max=2, A=0.5, r=0.5)),
+    de=Heuristic(de.DE, dict(CR=0.9, F=0.7)),
+    fa=Heuristic(fa.FA, dict(alpha=0.5, beta=0.2, gamma=1.0)),
+    ga=Heuristic(ga.GA, dict(p_selection=0.75, p_mutation=0.25, p_crossover=0.5)),
+    hs=Heuristic(hs.HS, dict(HMCR=0.7, PAR=0.7, bw=1.0)),
+    pso=Heuristic(pso.PSO, dict(w=0.7, c1=1.7, c2=1.7)),
+    sca=Heuristic(sca.SCA, dict(r_min=0, r_max=2, a=3)),
 )
 
 
