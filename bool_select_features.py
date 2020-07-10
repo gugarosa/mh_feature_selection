@@ -1,6 +1,7 @@
 import argparse
 
 import numpy as np
+import opytimizer.math.random as r
 
 import models.classifiers as c
 import models.heuristics as h
@@ -63,6 +64,10 @@ if __name__ == '__main__':
     n_iterations = args.n_iter
     n_variables = X_train.shape[1]
     hyperparams = h.get_heuristic(args.mh).hyperparams
+
+    # Defining boolean-based hyperparameters
+    hyperparams['c1'] = r.generate_binary_random_number(size=(n_variables, 1))
+    hyperparams['c2'] = r.generate_binary_random_number(size=(n_variables, 1))
 
     # Runs the optimization task
     history = o.bool_optimize(mh, opt_fn, n_agents, n_variables, n_iterations, hyperparams)

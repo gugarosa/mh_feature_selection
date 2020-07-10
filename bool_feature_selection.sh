@@ -9,13 +9,10 @@ VAL_SPLIT=0.5
 TEST_SPLIT=0.2
 
 # Defining a constant to hold the possible meta-heuristics
-MH=("pso")
+MH=("bpso")
 
 # Defining the classifier to be used
 CLF="opf"
-
-# Defining the transfer function to be used
-TF="t1"
 
 # Defining the number of agents
 N_AGENTS=10
@@ -29,13 +26,13 @@ SEED=0
 # Creating a loop of meta-heuristics
 for M in "${MH[@]}"; do
     # Performs the feature selection procedure
-    python select_features.py ${DATA} ${M} ${CLF} ${TF} -n_agents ${N_AGENTS} -n_iter ${N_ITER} -val_split ${VAL_SPLIT} -test_split ${TEST_SPLIT} -seed ${SEED}
+    python bool_select_features.py ${DATA} ${M} ${CLF} -n_agents ${N_AGENTS} -n_iter ${N_ITER} -val_split ${VAL_SPLIT} -test_split ${TEST_SPLIT} -seed ${SEED}
 
     # Process the optimization history
-    python process_history.py ${DATA}_${VAL_SPLIT}_${TEST_SPLIT}_${M}_${CLF}_${TF}_${N_AGENTS}ag_${N_ITER}iter_${SEED} ${TF}
+    python bool_process_history.py ${DATA}_${VAL_SPLIT}_${TEST_SPLIT}_${M}_${CLF}_${N_AGENTS}ag_${N_ITER}iter_${SEED}
 
     # Performs the classification over the testing set using selected features
-    python classify_selected_features.py ${DATA} ${CLF} ${DATA}_${VAL_SPLIT}_${TEST_SPLIT}_${M}_${CLF}_${TF}_${N_AGENTS}ag_${N_ITER}iter_${SEED} -val_split ${VAL_SPLIT} -test_split ${TEST_SPLIT} -seed ${SEED}
+    python classify_selected_features.py ${DATA} ${CLF} ${DATA}_${VAL_SPLIT}_${TEST_SPLIT}_${M}_${CLF}_${N_AGENTS}ag_${N_ITER}iter_${SEED} -val_split ${VAL_SPLIT} -test_split ${TEST_SPLIT} -seed ${SEED}
 done
 
 # Performs the classification over the testing set using baseline features
