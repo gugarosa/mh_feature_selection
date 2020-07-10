@@ -24,7 +24,7 @@ def get_arguments():
 
     parser.add_argument('dataset', help='Dataset identifier', choices=['wine'])
 
-    parser.add_argument('mh', help='Meta-heuristic identifier', choices=['bpso'])
+    parser.add_argument('mh', help='Meta-heuristic identifier', choices=['bmrfo', 'bpso'])
 
     parser.add_argument('clf', help='Classifier identifier', choices=['opf'])
 
@@ -68,6 +68,7 @@ if __name__ == '__main__':
     # Defining boolean-based hyperparameters
     hyperparams['c1'] = r.generate_binary_random_number(size=(n_variables, 1))
     hyperparams['c2'] = r.generate_binary_random_number(size=(n_variables, 1))
+    hyperparams['S'] = r.generate_binary_random_number(size=(n_variables, 1))
 
     # Runs the optimization task
     history = o.bool_optimize(mh, opt_fn, n_agents, n_variables, n_iterations, hyperparams)
