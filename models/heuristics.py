@@ -1,3 +1,4 @@
+from opytimizer.optimizers.boolean import bpso
 from opytimizer.optimizers.evolutionary import de, ga, hs
 from opytimizer.optimizers.swarm import abc, ba, fa, pso, sca
 
@@ -27,6 +28,7 @@ class Heuristic:
 HEURISTIC = dict(
     abc=Heuristic(abc.ABC, dict(n_trials=10)),
     ba=Heuristic(ba.BA, dict(f_min=0, f_max=2, A=0.5, r=0.5)),
+    bpso=Heuristic(bpso.BPSO, dict()),
     de=Heuristic(de.DE, dict(CR=0.9, F=0.7)),
     fa=Heuristic(fa.FA, dict(alpha=0.5, beta=0.2, gamma=1.0)),
     ga=Heuristic(ga.GA, dict(p_selection=0.75, p_mutation=0.25, p_crossover=0.5)),

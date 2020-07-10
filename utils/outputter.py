@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def process_history(history, transfer):
+def process_history(history, transfer=None):
     """Process an optimization history object and saves its output as readable files.
 
     Args:
@@ -13,8 +13,15 @@ def process_history(history, transfer):
     # Gathering the best agent's position as a numpy array
     features = np.asarray(history.best_agent[-1][0])
 
-    # Passing it down the transfer function and transforms it into an integer
-    selected_features = transfer(features).astype(int)
+    # Checks if there is a supplied transfer function
+    if transfer:
+        # Passing it down the transfer function and transforms it into an integer
+        selected_features = transfer(features).astype(int)
+    
+    # If not
+    else:
+        # Just gather the features
+        selected_features = features
 
     # Gathering the number of selected features
     n_selected_features = np.count_nonzero(selected_features)

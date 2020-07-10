@@ -29,14 +29,14 @@ SEED=0
 # Creating a loop of meta-heuristics
 for M in "${MH[@]}"; do
     # Performs the feature selection procedure
-    python select_features.py ${DATA} ${M} ${CLF} ${TF} -n_agents ${N_AGENTS} -n_iter ${N_ITER} -val_split ${VAL_SPLIT} -test_split ${TEST_SPLIT} -seed ${SEED}
+    python applications/regular/select_features.py ${DATA} ${M} ${CLF} ${TF} -n_agents ${N_AGENTS} -n_iter ${N_ITER} -val_split ${VAL_SPLIT} -test_split ${TEST_SPLIT} -seed ${SEED}
 
     # Process the optimization history
-    python process_history.py ${DATA}_${VAL_SPLIT}_${TEST_SPLIT}_${M}_${CLF}_${TF}_${N_AGENTS}ag_${N_ITER}iter_${SEED} ${TF}
+    python applications/regular/process_history.py ${DATA}_${VAL_SPLIT}_${TEST_SPLIT}_${M}_${CLF}_${TF}_${N_AGENTS}ag_${N_ITER}iter_${SEED} ${TF}
 
     # Performs the classification over the testing set using selected features
-    python classify_selected_features.py ${DATA} ${CLF} ${DATA}_${VAL_SPLIT}_${TEST_SPLIT}_${M}_${CLF}_${TF}_${N_AGENTS}ag_${N_ITER}iter_${SEED} -val_split ${VAL_SPLIT} -test_split ${TEST_SPLIT} -seed ${SEED}
+    python applications/regular/classify_selected_features.py ${DATA} ${CLF} ${DATA}_${VAL_SPLIT}_${TEST_SPLIT}_${M}_${CLF}_${TF}_${N_AGENTS}ag_${N_ITER}iter_${SEED} -val_split ${VAL_SPLIT} -test_split ${TEST_SPLIT} -seed ${SEED}
 done
 
 # Performs the classification over the testing set using baseline features
-python classify_baseline_features.py ${DATA} ${CLF} -val_split ${VAL_SPLIT} -test_split ${TEST_SPLIT} -seed ${SEED}
+python applications/regular/classify_baseline_features.py ${DATA} ${CLF} -val_split ${VAL_SPLIT} -test_split ${TEST_SPLIT} -seed ${SEED}

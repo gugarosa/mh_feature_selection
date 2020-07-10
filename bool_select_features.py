@@ -19,15 +19,13 @@ def get_arguments():
     """
 
     # Creates the ArgumentParser
-    parser = argparse.ArgumentParser(usage='Select features using a meta-heuristic optimization approach.')
+    parser = argparse.ArgumentParser(usage='Select features using a boolean meta-heuristic optimization approach.')
 
     parser.add_argument('dataset', help='Dataset identifier', choices=['wine'])
 
-    parser.add_argument('mh', help='Meta-heuristic identifier', choices=['abc', 'ba', 'de', 'fa', 'ga', 'hs', 'pso', 'sca'])
+    parser.add_argument('mh', help='Meta-heuristic identifier', choices=['bpso'])
 
     parser.add_argument('clf', help='Classifier identifier', choices=['opf'])
-
-    parser.add_argument('transfer', help='Transfer function identifier', choices=['t1'])
 
     parser.add_argument('-n_agents', help='Number of meta-heuristic agents', type=int, default=10)
 
@@ -53,27 +51,24 @@ if __name__ == '__main__':
     X_train, X_val, _, Y_train, Y_val, _ = l.load_dataset(args.dataset, val_split=args.val_split,
                                                           test_split=args.test_split, seed=args.seed)
 
-    # Gathering the classifier and the transfer function
+    # Gathering the classifier
     clf = c.get_clf(args.clf).obj
-    transfer = f.get_transfer(args.transfer).obj
 
     # Initializes the optimization target
-    opt_fn = t.feature_selection(clf, transfer, X_train, Y_train, X_val, Y_val)
+    opt_fn = t.bool_feature_selection(clf, X_train, Y_train, X_val, Y_val)
 
     # Gathering the optimizer (meta-heuristic) and its arguments
     mh = h.get_heuristic(args.mh).obj
     n_agents = args.n_agents
     n_iterations = args.n_iter
     n_variables = X_train.shape[1]
-    lb = [-1] * n_variables
-    ub = [1] * n_variables
     hyperparams = h.get_heuristic(args.mh).hyperparams
 
     # Runs the optimization task
-    history = o.optimize(mh, opt_fn, n_agents, n_variables, n_iterations, lb, ub, hyperparams)
+    history = o.bool_optimize(mh, opt_fn, n_agents, n_variables, n_iterations, hyperparams)
 
     # Saving the optimization history
     history.save(
         f'history/{args.dataset}_{args.val_split}_{args.test_split}' +
-        f'_{args.mh}_{args.clf}_{args.transfer}_{n_agents}ag_{n_iterations}iter_{args.seed}.pkl'
+        f'_{args.mh}_{args.clf}_{n_agents}ag_{n_iterations}iter_{args.seed}.pkl'
     )
