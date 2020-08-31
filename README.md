@@ -2,12 +2,16 @@
 
 *This repository holds all the necessary code to run the very-same experiments described in the paper "A Survey on Metaheuristic Approaches to Feature Selection".*
 
+---
+
 ## References
 
 If you use our work to fulfill any of your needs, please cite us:
 
 ```
 ```
+
+---
 
 ## Structure
 
@@ -23,6 +27,8 @@ If you use our work to fulfill any of your needs, please cite us:
  * `utils`
    * `loader.py`: Loads OPF file format datasets;
    * `outputter.py`: Converts the optimization history into readable output files.
+   
+---
 
 ## Package Guidelines
 
@@ -35,6 +41,8 @@ Install all the pre-needed requirements using:
 ### Data configuration
 
 Please [download]() the datasets in the OPF file format and put then on the `data/` folder.
+
+---
 
 ## Usage
 
@@ -66,7 +74,7 @@ Additionally, it is possible to perform the classification task over the testing
 
 ```python classify_baseline_features.py -h```
 
-## Bash Script
+### Bash Script
 
 Instead of invoking every script to conduct the experiments, it is also possible to use the provided shell script, as follows:
 
@@ -74,6 +82,10 @@ Instead of invoking every script to conduct the experiments, it is also possible
 
 Such a script will conduct every step needed to accomplish the experimentation used throughout this paper. Furthermore, one can change any input argument that is defined on the script.
 
+---
+
 ## Support
 
 We know that we do our best, but it is inevitable to acknowledge that we make mistakes. If you ever need to report a bug, report a problem, talk to us, please do so! We will be available at our bests at this repository or gustavo.rosa@unesp.br.
+
+---
