@@ -21,12 +21,11 @@ If you use our work to fulfill any of your needs, please cite us:
    * `classifiers.py`: Defines the possible classifiers that can be used;
    * `heuristics.py`: Defines the possible meta-heuristics that can be used;
    * `transfers.py`: Defines the possible transfer functions that can be used;
- * `opt`
-   * `target.py`: Provides the objective function that will be optimized;
-   * `wrapper.py`: Wraps the optimization task into a single method;
  * `utils`
    * `loader.py`: Loads OPF file format datasets;
+   * `optimizer.py`: Wraps the optimization task into a single method;
    * `outputter.py`: Converts the optimization history into readable output files.
+   * `targets.py`: Implements the objective functions to be optimized.
    
 ---
 
@@ -40,7 +39,7 @@ Install all the pre-needed requirements using:
 
 ### Data configuration
 
-Please [download]() the datasets in the OPF file format and then put them on the `data/` folder.
+Please [download](http://recogna.tech/files/mh_feature_selection/data.tar.gz) the datasets in the OPF file format and then put them on the `data/` folder.
 
 ---
 
@@ -48,7 +47,9 @@ Please [download]() the datasets in the OPF file format and then put them on the
 
 ### Select Features using Meta-Heuristic Optimization
 
-The first step is to select features using a meta-heuristic optimization. To accomplish such a step, one needs to use the following script:
+The first step is to select features using a meta-heuristic optimization. To accomplish such a step, one needs to use the following scripts:
+
+```python bool_select_features.py -h```
 
 ```python select_features.py -h```
 
@@ -56,7 +57,9 @@ The first step is to select features using a meta-heuristic optimization. To acc
 
 ### Process Optimization History
 
-After conducting the optimization task, one needs to process its history into readable outputs. Please, use the following script to accomplish such a procedure:
+After conducting the optimization task, one needs to process its history into readable outputs. Please, use the following scripts to accomplish such a procedure:
+
+```python bool_process_history.py -h```
 
 ```python process_history.py -h```
 
