@@ -35,7 +35,9 @@ If you use our work to fulfill any of your needs, please cite us:
 
 Install all the pre-needed requirements using:
 
-```pip install -r requirements.txt```
+```Python
+pip install -r requirements.txt
+```
 
 ### Data configuration
 
@@ -49,9 +51,15 @@ Please [download](http://recogna.tech/files/mh_feature_selection/data.tar.gz) th
 
 The first step is to select features using a meta-heuristic optimization. To accomplish such a step, one needs to use the following scripts:
 
-```python bool_select_features.py -h```
+```Python
+python bool_select_features.py -h
+```
 
-```python select_features.py -h```
+or
+
+```Python
+python select_features.py -h
+```
 
 *Note that `-h` invokes the script helper, which assists users in employing the appropriate parameters.*
 
@@ -59,9 +67,15 @@ The first step is to select features using a meta-heuristic optimization. To acc
 
 After conducting the optimization task, one needs to process its history into readable outputs. Please, use the following scripts to accomplish such a procedure:
 
-```python bool_process_history.py -h```
+```Python
+python bool_process_history.py -h
+```
 
-```python process_history.py -h```
+or
+
+```Python
+python process_history.py -h
+```
 
 *Note that this script converts the .pkl optimization history into readable .txt outputs.*
 
@@ -69,21 +83,31 @@ After conducting the optimization task, one needs to process its history into re
 
 With the readable outputs in hands, one can now classify the testing set using the selected features:
 
-```python classify_selected_features.py -h```
+```Python
+python classify_selected_features.py -h
+```
 
 ### Classify Baseline Features (Optional)
 
 Additionally, it is possible to perform the classification task over the testing set using baseline features (all features), as follows:
 
-```python classify_baseline_features.py -h```
+```Python
+python classify_baseline_features.py -h
+```
 
 ### Bash Script
 
 Instead of invoking every script to conduct the experiments, it is also possible to use the provided shell scripts, as follows:
 
-```./bool_pipeline.sh```
+```Bash
+./bool_pipeline.sh
+```
 
-```./pipeline.sh```
+or
+
+```Bash
+./pipeline.sh
+```
 
 Such a script will conduct every step needed to accomplish the experimentation used throughout this paper. Furthermore, one can change any input argument that is defined in the script.
 
