@@ -24,7 +24,7 @@ If you use our work to fulfill any of your needs, please cite us:
  * `utils`
    * `loader.py`: Loads OPF file format datasets;
    * `optimizer.py`: Wraps the optimization task into a single method;
-   * `outputter.py`: Converts the optimization history into readable output files.
+   * `outputter.py`: Converts the optimization history into readable output files;
    * `targets.py`: Implements the objective functions to be optimized.
    
 ---
