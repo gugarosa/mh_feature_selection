@@ -1,7 +1,6 @@
 import opfython.stream.loader as l
 import opfython.stream.parser as p
 import opfython.stream.splitter as s
-import opfython.utils.converter as c
 
 
 def load_dataset(dataset, val_split=0.25, test_split=0.2, seed=0):
@@ -10,9 +9,6 @@ def load_dataset(dataset, val_split=0.25, test_split=0.2, seed=0):
 
     # Defining the path to the file
     input_path = f'data/{dataset}'
-
-    # Converting from OPF to text
-    c.opf2txt(input_path + '.dat', output_file=input_path + '.txt')
 
     # Loading a .txt file to a numpy array
     txt = l.load_txt(input_path + '.txt')

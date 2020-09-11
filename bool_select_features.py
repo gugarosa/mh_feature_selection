@@ -22,7 +22,12 @@ def get_arguments():
     # Creates the ArgumentParser
     parser = argparse.ArgumentParser(usage='Select features using a boolean meta-heuristic optimization approach.')
 
-    parser.add_argument('dataset', help='Dataset identifier', choices=['wine'])
+    parser.add_argument('dataset', help='Dataset identifier', choices=['arcene', 'basehock', 'caltech101', 'coil20',
+                                                                       'isolet', 'lung', 'madelon', 'mpeg7', 'mpeg7_BAS',
+                                                                       'mpeg7_FOURIER', 'mushrooms', 'ntl-commercial',
+                                                                       'ntl-industrial', 'orl', 'pcmac', 'phishing',
+                                                                       'segment', 'semeion', 'sonar', 'spambase',
+                                                                       'vehicle', 'wine'])
 
     parser.add_argument('mh', help='Meta-heuristic identifier', choices=['bmrfo', 'bpso'])
 

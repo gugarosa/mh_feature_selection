@@ -18,7 +18,12 @@ def get_arguments():
 
     parser = argparse.ArgumentParser(usage='Classify baseline features over the testing set.')
 
-    parser.add_argument('dataset', help='Dataset identifier', choices=['wine'])
+    parser.add_argument('dataset', help='Dataset identifier', choices=['arcene', 'basehock', 'caltech101', 'coil20',
+                                                                       'isolet', 'lung', 'madelon', 'mpeg7', 'mpeg7_BAS',
+                                                                       'mpeg7_FOURIER', 'mushrooms', 'ntl-commercial',
+                                                                       'ntl-industrial', 'orl', 'pcmac', 'phishing',
+                                                                       'segment', 'semeion', 'sonar', 'spambase',
+                                                                       'vehicle', 'wine'])
 
     parser.add_argument('clf', help='Classifier identifier', choices=['opf'])
 
