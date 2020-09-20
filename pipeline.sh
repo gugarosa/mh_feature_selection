@@ -9,7 +9,7 @@ VAL_SPLIT=0.5
 TEST_SPLIT=0.2
 
 # Defining a constant to hold the possible meta-heuristics
-MH=("pso")
+MH=("bsa")
 
 # Defining the classifier to be used
 CLF="opf"

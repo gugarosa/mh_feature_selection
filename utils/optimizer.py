@@ -1,8 +1,8 @@
-from opytimizer import Opytimizer
-from opytimizer.core.function import Function
-from opytimizer.core.optimizer import Optimizer
-from opytimizer.spaces.boolean import BooleanSpace
-from opytimizer.spaces.search import SearchSpace
+from otimizador import Opytimizer
+from otimizador.core.function import Function
+from otimizador.core.optimizer import Optimizer
+from otimizador.spaces.boolean import BooleanSpace
+from otimizador.spaces.search import SearchSpace
 
 
 def bool_optimize(opt, target, n_agents, n_variables, n_iterations, hyperparams):

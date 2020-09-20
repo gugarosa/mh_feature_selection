@@ -1,7 +1,7 @@
 import argparse
 
 import numpy as np
-import opytimizer.math.random as r
+import otimizador.math.random as r
 
 import models.classifiers as c
 import models.heuristics as h

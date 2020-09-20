@@ -1,7 +1,7 @@
 import argparse
 
 import numpy as np
-from opytimizer.utils.history import History
+from otimizador.utils.history import History
 
 import utils.outputter as o
 
