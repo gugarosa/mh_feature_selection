@@ -2,7 +2,7 @@ from opytimizer.optimizers.boolean import bmrfo, bpso
 from opytimizer.optimizers.evolutionary import de, ga, hs
 from opytimizer.optimizers.swarm import abc, ba, fa, pso, sca
 
-from optimizers.bsa import BSA
+from optimizers import bsa
 
 
 class Heuristic:
