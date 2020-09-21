@@ -2,6 +2,8 @@ from opytimizer.optimizers.boolean import bmrfo, bpso
 from opytimizer.optimizers.evolutionary import de, ga, hs
 from opytimizer.optimizers.swarm import abc, ba, fa, pso, sca
 
+from optimizers.bsa import BSA
+
 
 class Heuristic:
     """An Heuristic class helps users in selecting distinct optimization heuristics from the command line.
@@ -30,6 +32,7 @@ HEURISTIC = dict(
     ba=Heuristic(ba.BA, dict(f_min=0, f_max=2, A=0.5, r=0.5)),
     bmrfo=Heuristic(bmrfo.BMRFO, dict()),
     bpso=Heuristic(bpso.BPSO, dict()),
+    bsa=Heuristic(bsa.BSA, dict(mix_rate = 1.0, F = 3.0)),
     de=Heuristic(de.DE, dict(CR=0.9, F=0.7)),
     fa=Heuristic(fa.FA, dict(alpha=0.5, beta=0.2, gamma=1.0)),
     ga=Heuristic(ga.GA, dict(p_selection=0.75, p_mutation=0.25, p_crossover=0.5)),
