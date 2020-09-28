@@ -2,7 +2,8 @@ from opytimizer.optimizers.boolean import bmrfo, bpso
 from opytimizer.optimizers.evolutionary import de, ga, hs
 from opytimizer.optimizers.swarm import abc, ba, fa, pso, sca
 
-from optimizers import bsa
+from optimizers import bsa,bso
+
 
 
 class Heuristic:
@@ -33,6 +34,7 @@ HEURISTIC = dict(
     bmrfo=Heuristic(bmrfo.BMRFO, dict()),
     bpso=Heuristic(bpso.BPSO, dict()),
     bsa=Heuristic(bsa.BSA, dict(mix_rate = 1.0, F = 3.0)),
+    bso=Heuristic(bso.BSO, dict(k = 3, p_one_cluster = 0.3,p_one_center = 0.4,p_two_centers = 0.3)),
     de=Heuristic(de.DE, dict(CR=0.9, F=0.7)),
     fa=Heuristic(fa.FA, dict(alpha=0.5, beta=0.2, gamma=1.0)),
     ga=Heuristic(ga.GA, dict(p_selection=0.75, p_mutation=0.25, p_crossover=0.5)),
@@ -40,7 +42,6 @@ HEURISTIC = dict(
     pso=Heuristic(pso.PSO, dict(w=0.7, c1=1.7, c2=1.7)),
     sca=Heuristic(sca.SCA, dict(r_min=0, r_max=2, a=3)),
 )
-
 
 def get_heuristic(name):
     """Gets an heuristic by its identifier.
