@@ -2,7 +2,8 @@ from opytimizer.optimizers.boolean import bmrfo, bpso
 from opytimizer.optimizers.evolutionary import de, ga, hs
 from opytimizer.optimizers.misc import doa
 from opytimizer.optimizers.science import bh, eo, hgso, mvo, two, wwo
-from opytimizer.optimizers.swarm import abc, ba, fa, pso, sca
+from opytimizer.optimizers.social import ssd
+from opytimizer.optimizers.swarm import abc, abo, ba, boa, fa, mfo, pio, pso, sca, sfo, sso, woa
 
 from optimizers import bsa, bso
 
@@ -32,9 +33,11 @@ class Heuristic:
 # Defines an heuristic dictionary constant with the possible values
 HEURISTIC = dict(
     abc=Heuristic(abc.ABC, dict(n_trials=10)),
+    abo=Heuristic(abo.ABO, dict(sunspot_ratio=0.9, a=2.0)),
     ba=Heuristic(ba.BA, dict(f_min=0, f_max=2, A=0.5, r=0.5)),
     bh=Heuristic(bh.BH, dict()),
     bmrfo=Heuristic(bmrfo.BMRFO, dict()),
+    boa=Heuristic(boa.BOA, dict(c=0.01, a=0.1, p=0.8)),
     bpso=Heuristic(bpso.BPSO, dict()),
     bsa=Heuristic(bsa.BSA, dict(mix_rate = 1.0, F = 3.0)),
     bso=Heuristic(bso.BSO, dict(k = 3, p_one_cluster = 0.3,p_one_center = 0.4,p_two_centers = 0.3)),
@@ -45,10 +48,16 @@ HEURISTIC = dict(
     ga=Heuristic(ga.GA, dict(p_selection=0.75, p_mutation=0.25, p_crossover=0.5)),
     hgso=Heuristic(hgso.HGSO, dict(n_clusters=2, l1=0.0005, l2=100, l3=0.001, alpha=1.0, beta=1.0, K=1.0)),
     hs=Heuristic(hs.HS, dict(HMCR=0.7, PAR=0.7, bw=1.0)),
+    mfo=Heuristic(mfo.MFO, dict(b=1)),
     mvo=Heuristic(mvo.MVO, dict(WEP_min=0.2, WEP_max=1, p=6)),
+    pio=Heuristic(pio.PIO, dict(n_c1=150, n_c2=200, R=0.2)),
     pso=Heuristic(pso.PSO, dict(w=0.7, c1=1.7, c2=1.7)),
     sca=Heuristic(sca.SCA, dict(r_min=0, r_max=2, a=3)),
+    sfo=Heuristic(sfo.SFO, dict(PP=0.1, A=4, e=0.001)),
+    ssd=Heuristic(ssd.SSD, dict(c=2.0, decay=0.99)),
+    sso=Heuristic(sso.SSO, dict(C_w=0.1, C_p=0.4, C_g=0.9)),
     two=Heuristic(two.TWO, dict(mu_s=1, mu_k=1, delta_t=1, alpha=0.9, beta=0.05)),
+    woa=Heuristic(woa.WOA, dict(b=1)),
     wwo=Heuristic(wwo.WWO, dict(h_max=5, alpha=1.001, beta=0.001, k_max=1))
 )
 
