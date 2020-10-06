@@ -3,10 +3,10 @@ from opytimizer.optimizers.evolutionary import de, ga, hs
 from opytimizer.optimizers.misc import doa
 from opytimizer.optimizers.science import bh, eo, hgso, mvo, two, wwo
 from opytimizer.optimizers.social import ssd
-from opytimizer.optimizers.swarm import abc, abo, ba, boa, fa, mfo, pio, pso, sca, sfo, sso, woa
+from opytimizer.optimizers.swarm import (abc, abo, ba, boa, fa, mfo, pio, pso,
+                                         sca, sfo, sso, woa)
 
 from optimizers import bsa, bso
-
 
 
 class Heuristic:
