@@ -1,5 +1,5 @@
 from opytimizer.optimizers.boolean import bmrfo, bpso
-from opytimizer.optimizers.evolutionary import de, ga, hs
+from opytimizer.optimizers.evolutionary import de, ga, gp, hs
 from opytimizer.optimizers.misc import doa
 from opytimizer.optimizers.science import bh, eo, hgso, mvo, two, wwo
 from opytimizer.optimizers.social import ssd
@@ -46,6 +46,7 @@ HEURISTIC = dict(
     eo=Heuristic(eo.EO, dict(a1=2, a2=1, GP=0.5, V=1)),
     fa=Heuristic(fa.FA, dict(alpha=0.5, beta=0.2, gamma=1.0)),
     ga=Heuristic(ga.GA, dict(p_selection=0.75, p_mutation=0.25, p_crossover=0.5)),
+    gp=Heuristic(gp.GP, dict(p_reproduction=0.25, p_mutation=0.1, p_crossover=0.2, prunning_ratio=0.0)),
     hgso=Heuristic(hgso.HGSO, dict(n_clusters=2, l1=0.0005, l2=100, l3=0.001, alpha=1.0, beta=1.0, K=1.0)),
     hs=Heuristic(hs.HS, dict(HMCR=0.7, PAR=0.7, bw=1.0)),
     mfo=Heuristic(mfo.MFO, dict(b=1)),

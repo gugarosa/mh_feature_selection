@@ -29,7 +29,7 @@ def get_arguments():
                                                                        'vehicle', 'wine'])
 
     parser.add_argument('mh', help='Meta-heuristic identifier', choices=['abc', 'abo', 'ba', 'bh', 'boa', 'bsa',
-                                                                         'bso', 'de', 'doa', 'eo', 'fa', 'ga', 'hgso',
+                                                                         'bso', 'de', 'doa', 'eo', 'fa', 'ga', 'gp', 'hgso',
                                                                          'hs', 'mfo', 'mvo', 'pio', 'pso', 'sca', 'sfo',
                                                                          'ssd', 'sso', 'two', 'woa', 'wwo'])
 
@@ -78,7 +78,10 @@ if __name__ == '__main__':
     hyperparams = h.get_heuristic(args.mh).hyperparams
 
     # Runs the optimization task
-    history = o.optimize(mh, opt_fn, n_agents, n_variables, n_iterations, lb, ub, hyperparams)
+    if args.mh == 'gp':
+        history = o.optimize_with_gp(mh, opt_fn, n_agents, n_variables, n_iterations, lb, ub, hyperparams)
+    else:
+        history = o.optimize(mh, opt_fn, n_agents, n_variables, n_iterations, lb, ub, hyperparams)
 
     # Saving the optimization history
     history.save(
