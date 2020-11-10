@@ -1,3 +1,6 @@
+"""Atom Search Optimization.
+"""
+
 import copy
 
 import numpy as np
@@ -15,18 +18,23 @@ logger = l.get_logger(__name__)
 
 class ASO(Optimizer):
     """An ASO class, inherited from Optimizer.
+
     This is the designed class to define ASO-related
     variables and methods.
+
     References:
         W. Zhao, L. Wang and Z. Zhang.
         A novel atom search optimization for dispersion coefficient estimation in groundwater.
         Future Generation Computer Systems (2019).
+
     """
 
     def __init__(self, algorithm='ASO', hyperparams=None):
         """Initialization method.
+
         Args:
             hyperparams (dict): Contains key-value parameters to the meta-heuristics.
+
         """
 
         logger.info('Overriding class: Optimizer -> ASO.')
@@ -47,7 +55,8 @@ class ASO(Optimizer):
         
     @property
     def alpha(self):
-        """float: depth weight.
+        """float: Depth weight.
+
         """
 
         return self._alpha
@@ -61,7 +70,8 @@ class ASO(Optimizer):
 
     @property
     def beta(self):
-        """float: multiplier weight.
+        """float: Multiplier weight.
+
         """
 
         return self._beta
@@ -77,10 +87,13 @@ class ASO(Optimizer):
         
     def _build(self, hyperparams):
         """This method serves as the object building process.
+
         One can define several commands here that does not necessarily
         needs to be on its initialization.
+
         Args:
             hyperparams (dict): Contains key-value parameters to the meta-heuristics.
+
         """
 
         logger.debug('Running private method: build().')
@@ -100,9 +113,10 @@ class ASO(Optimizer):
         self.built = True
 
         # Logging attributes
-        logger.debug('Algorithm: %s| Hyperparameters: alpha = %s, beta = %s | '
+        logger.debug('Algorithm: %s | Hyperparameters: alpha = %s, beta = %s | '
                      'Built: %s.',
-                     self.algorithm, self.alpha, self.beta, self.built)
+                     self.algorithm, self.alpha, self.beta,
+                     self.built)
     
     def _calculate_mass(self, agents):
         
