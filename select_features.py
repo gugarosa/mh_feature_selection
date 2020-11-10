@@ -28,10 +28,12 @@ def get_arguments():
                                                                        'segment', 'semeion', 'sonar', 'spambase',
                                                                        'vehicle', 'wine'])
 
-    parser.add_argument('mh', help='Meta-heuristic identifier', choices=['abc', 'abo', 'ba', 'bh', 'boa', 'bsa',
-                                                                         'bso', 'de', 'doa', 'eo', 'fa', 'ga', 'gp', 'hgso',
-                                                                         'hs', 'mfo', 'mvo', 'pio', 'pso', 'sca', 'sfo',
-                                                                         'ssd', 'sso', 'two', 'woa', 'wwo'])
+    parser.add_argument('mh', help='Meta-heuristic identifier', choices=['abc', 'abo', 'aso', 'ba', 'bh', 'boa', 'bsa',
+                                                                         'bso', 'csa', 'de', 'doa', 'eho', 'eo', 'epo',
+                                                                         'fa', 'ga', 'gp', 'goa', 'gwo', 'hgso', 'hho',
+                                                                         'hs', 'mfo', 'mvo', 'pio', 'pso', 'qsa', 'sca',
+                                                                         'sfo', 'sos', 'ssa', 'ssd', 'sso', 'two',
+                                                                         'woa', 'wwo'])
 
     parser.add_argument('clf', help='Classifier identifier', choices=['opf'])
 
