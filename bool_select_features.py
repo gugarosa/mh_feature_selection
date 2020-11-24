@@ -1,11 +1,11 @@
 import argparse
 
 import numpy as np
-import opytimizer.math.random as r
 
 import models.classifiers as c
 import models.heuristics as h
 import models.transfers as f
+import opytimizer.math.random as r
 import utils.loader as l
 import utils.optimizer as o
 import utils.targets as t

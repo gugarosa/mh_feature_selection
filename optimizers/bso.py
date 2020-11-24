@@ -6,6 +6,9 @@ import math
 import sys
 
 import numpy as np
+from sklearn.cluster import KMeans
+from tqdm import tqdm
+
 import opytimizer.math.random as r
 import opytimizer.utils.constants as c
 import opytimizer.utils.exception as e
@@ -13,8 +16,6 @@ import opytimizer.utils.history as h
 import opytimizer.utils.logging as l
 from opytimizer.core.agent import Agent
 from opytimizer.core.optimizer import Optimizer
-from sklearn.cluster import KMeans
-from tqdm import tqdm
 
 logger = l.get_logger(__name__)
 

@@ -1,12 +1,13 @@
+from optimizers import aso, bsa, bso, hho, qsa, sos
 from opytimizer.optimizers.boolean import bmrfo, bpso
 from opytimizer.optimizers.evolutionary import de, ga, gp, hs
 from opytimizer.optimizers.misc import doa
+from opytimizer.optimizers.population import epo, gwo
 from opytimizer.optimizers.science import bh, eo, hgso, mvo, two, wwo
 from opytimizer.optimizers.social import ssd
-from opytimizer.optimizers.swarm import (abc, abo, ba, boa, fa, mfo, pio, pso,
-                                         sca, sfo, sso, woa)
-
-from optimizers import aso, bsa, bso, csa, eho, epo, goa, gwo, hho, qsa, sos, ssa
+from opytimizer.optimizers.swarm import (abc, abo, ba, boa, csa, eho, fa, goa,
+                                         mfo, pio, pso, sca, sfo, ssa, sso,
+                                         woa)
 
 
 class Heuristic:
@@ -40,18 +41,18 @@ HEURISTIC = dict(
     bmrfo=Heuristic(bmrfo.BMRFO, dict()),
     boa=Heuristic(boa.BOA, dict(c=0.01, a=0.1, p=0.8)),
     bpso=Heuristic(bpso.BPSO, dict()),
-    bsa=Heuristic(bsa.BSA, dict(mix_rate = 1.0, F = 3.0)),
-    bso=Heuristic(bso.BSO, dict(k = 3, p_one_cluster = 0.3,p_one_center = 0.4,p_two_centers = 0.3)),
+    bsa=Heuristic(bsa.BSA, dict(mix_rate=1.0, F=3.0)),
+    bso=Heuristic(bso.BSO, dict(k=3, p_one_cluster=0.3, p_one_center=0.4, p_two_centers=0.3)),
     csa=Heuristic(csa.CSA, dict(fl=2, AP=0.1)),
     de=Heuristic(de.DE, dict(CR=0.9, F=0.7)),
     doa=Heuristic(doa.DOA, dict(r=1.0)),
-    eho=Heuristic(eho.EHO, dict(alpha=0.5, beta=0.1, n_clans=5, nci=10)),
+    eho=Heuristic(eho.EHO, dict(alpha=0.5, beta=0.1, n_clans=10)),
     eo=Heuristic(eo.EO, dict(a1=2, a2=1, GP=0.5, V=1)),
     epo=Heuristic(epo.EPO, dict(f=2, l=1.5)),
     fa=Heuristic(fa.FA, dict(alpha=0.5, beta=0.2, gamma=1.0)),
     ga=Heuristic(ga.GA, dict(p_selection=0.75, p_mutation=0.25, p_crossover=0.5)),
     gp=Heuristic(gp.GP, dict(p_reproduction=0.25, p_mutation=0.1, p_crossover=0.2, prunning_ratio=0.0)),
-    goa=Heuristic(goa.GOA, dict(c_min=0.0004, c_max=1)),
+    goa=Heuristic(goa.GOA, dict(c_min=0.00001, c_max=1, f=0.5, l=1.5)),
     gwo=Heuristic(gwo.GWO, dict()),
     hgso=Heuristic(hgso.HGSO, dict(n_clusters=2, l1=0.0005, l2=100, l3=0.001, alpha=1.0, beta=1.0, K=1.0)),
     hho=Heuristic(hho.HHO, dict()),
