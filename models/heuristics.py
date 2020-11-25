@@ -1,9 +1,9 @@
-from optimizers import aso, bsa, bso, hho, qsa, sos
+from optimizers import bsa, bso, qsa, sos
 from opytimizer.optimizers.boolean import bmrfo, bpso
 from opytimizer.optimizers.evolutionary import de, ga, gp, hs
 from opytimizer.optimizers.misc import doa
-from opytimizer.optimizers.population import epo, gwo
-from opytimizer.optimizers.science import bh, eo, hgso, mvo, two, wwo
+from opytimizer.optimizers.population import epo, gwo, hho
+from opytimizer.optimizers.science import aso, bh, eo, hgso, mvo, two, wwo
 from opytimizer.optimizers.social import ssd
 from opytimizer.optimizers.swarm import (abc, abo, ba, boa, csa, eho, fa, goa,
                                          mfo, pio, pso, sca, sfo, ssa, sso,
@@ -35,7 +35,7 @@ class Heuristic:
 HEURISTIC = dict(
     abc=Heuristic(abc.ABC, dict(n_trials=10)),
     abo=Heuristic(abo.ABO, dict(sunspot_ratio=0.9, a=2.0)),
-    aso=Heuristic(aso.ASO, dict(alpha=50, beta=0.2)),
+    aso=Heuristic(aso.ASO, dict(alpha=50.0, beta=0.2)),
     ba=Heuristic(ba.BA, dict(f_min=0, f_max=2, A=0.5, r=0.5)),
     bh=Heuristic(bh.BH, dict()),
     bmrfo=Heuristic(bmrfo.BMRFO, dict()),
