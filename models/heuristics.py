@@ -1,12 +1,12 @@
-from optimizers import bsa, bso, qsa, sos
+from optimizers import bsa, bso
 from opytimizer.optimizers.boolean import bmrfo, bpso
 from opytimizer.optimizers.evolutionary import de, ga, gp, hs
 from opytimizer.optimizers.misc import doa
 from opytimizer.optimizers.population import epo, gwo, hho
 from opytimizer.optimizers.science import aso, bh, eo, hgso, mvo, two, wwo
-from opytimizer.optimizers.social import ssd
+from opytimizer.optimizers.social import qsa, ssd
 from opytimizer.optimizers.swarm import (abc, abo, ba, boa, csa, eho, fa, goa,
-                                         mfo, pio, pso, sca, sfo, ssa, sso,
+                                         mfo, pio, pso, sca, sfo, sos, ssa, sso,
                                          woa)
 
 
