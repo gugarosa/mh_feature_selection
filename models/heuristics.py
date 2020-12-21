@@ -1,6 +1,6 @@
-from optimizers import bsa, bso
+from optimizers import bso, coa
 from opytimizer.optimizers.boolean import bmrfo, bpso
-from opytimizer.optimizers.evolutionary import de, ga, gp, hs
+from opytimizer.optimizers.evolutionary import de, ga, gp, hs, bsa
 from opytimizer.optimizers.misc import doa
 from opytimizer.optimizers.population import epo, gwo, hho
 from opytimizer.optimizers.science import aso, bh, eo, hgso, mvo, two, wwo
@@ -43,6 +43,7 @@ HEURISTIC = dict(
     bpso=Heuristic(bpso.BPSO, dict()),
     bsa=Heuristic(bsa.BSA, dict(mix_rate=1.0, F=3.0)),
     bso=Heuristic(bso.BSO, dict(k=3, p_one_cluster=0.3, p_one_center=0.4, p_two_centers=0.3)),
+    coa=Heuristic(coa.COA, dict(Np=2,Nc=5)),
     csa=Heuristic(csa.CSA, dict(fl=2, AP=0.1)),
     de=Heuristic(de.DE, dict(CR=0.9, F=0.7)),
     doa=Heuristic(doa.DOA, dict(r=1.0)),
