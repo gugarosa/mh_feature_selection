@@ -41,7 +41,7 @@ pip install -r requirements.txt
 
 ### Data configuration
 
-Please [download](http://recogna.tech/files/mh_feature_selection/data.tar.gz) the datasets in the OPF file format and then put them on the `data/` folder.
+Please [download](https://www.recogna.tech/files/mh_feature_selection/data.tar.gz) the datasets in the OPF file format and then put them on the `data/` folder.
 
 ---
 
