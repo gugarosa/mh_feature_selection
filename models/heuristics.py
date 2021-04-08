@@ -81,7 +81,7 @@ def get_heuristic(name):
         name (str): Heuristic's identifier.
 
     Returns:
-        An instance of the MetaHeuristic class.
+        An instance of the Heuristic class.
 
     """
 
