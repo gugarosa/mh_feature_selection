@@ -1,10 +1,10 @@
 import argparse
 
 import numpy as np
+from opytimizer.utils.history import History
 
 import models.transfers as f
 import utils.outputter as o
-from opytimizer.utils.history import History
 
 
 def get_arguments():

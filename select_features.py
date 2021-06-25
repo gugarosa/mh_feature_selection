@@ -1,4 +1,5 @@
 import argparse
+import pickle
 
 import numpy as np
 
@@ -85,8 +86,8 @@ if __name__ == '__main__':
     else:
         history = o.optimize(mh, opt_fn, n_agents, n_variables, n_iterations, lb, ub, hyperparams)
 
-    # Saving the optimization history
-    history.save(
-        f'history/{args.dataset}_{args.val_split}_{args.test_split}' +
-        f'_{args.mh}_{args.clf}_{args.transfer}_{n_agents}ag_{n_iterations}iter_{args.seed}.pkl'
-    )
+    # Dumps the object to file
+    file_path = f'history/{args.dataset}_{args.val_split}_{args.test_split}_{args.mh}_{args.clf}_{args.transfer}_{n_agents}ag_{n_iterations}iter_{args.seed}.pkl'
+    with open(file_path, 'wb') as output_file:
+        # Dumps object to file
+        pickle.dump(history, output_file)

@@ -1,3 +1,3 @@
+git+https://github.com/gugarosa/opytimizer.git
 opfython==1.0.10
-opytimizer==2.1.4
 scikit-learn>=0.22.2

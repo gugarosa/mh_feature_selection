@@ -1,9 +1,9 @@
 import argparse
 
 import numpy as np
+from opytimizer.utils.history import History
 
 import utils.outputter as o
-from opytimizer.utils.history import History
 
 
 def get_arguments():

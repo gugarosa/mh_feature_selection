@@ -1,10 +1,9 @@
+from opfython.models.supervised import SupervisedOPF
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import SVC, LinearSVC
 from sklearn.tree import DecisionTreeClassifier
-
-from opfython.models.supervised import SupervisedOPF
 
 
 class Classifier:
