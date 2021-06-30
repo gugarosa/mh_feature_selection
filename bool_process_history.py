@@ -26,7 +26,7 @@ if __name__ == '__main__':
     args = get_arguments()
 
     # Defining the input file path
-    input_path = f'history/{args.input_file}'
+    input_path = f'history/{args.input_file}.pkl'
 
     # Loads the history file
     with open(input_path, "rb") as input_file:
