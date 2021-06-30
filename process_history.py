@@ -1,7 +1,7 @@
 import argparse
+import pickle
 
 import numpy as np
-from opytimizer.utils.history import History
 
 import models.transfers as f
 import utils.outputter as o
@@ -31,11 +31,10 @@ if __name__ == '__main__':
     # Defining the input file path
     input_path = f'history/{args.input_file}'
 
-    # Creating an empty History object
-    history = History()
-
-    # Loading history from input file
-    history.load(input_path + '.pkl')
+    # Loads the history file
+    with open(input_path, "rb") as input_file:
+        # Loads object from file
+        history = pickle.load(input_file)
 
     # Gathering the used transfer function
     transfer = f.get_transfer(args.transfer).obj
