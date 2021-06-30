@@ -4,7 +4,17 @@ import opfython.stream.splitter as s
 
 
 def load_dataset(dataset, val_split=0.25, test_split=0.2, seed=0):
-    """
+    """Loads a dataset and splits into training, validation and testing sets.
+
+    Args:
+        dataset (str): String corresponding to the dataset to be loaded.
+        val_split (float): Validation set percentage (applied after train/test split).
+        test_split (test_split): Testing set percentage.
+        seed (int): Random seed.
+
+    Returns:
+        Training, validation and testing sets.
+        
     """
 
     # Defining the path to the file
