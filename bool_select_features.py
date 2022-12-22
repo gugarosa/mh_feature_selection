@@ -32,7 +32,7 @@ def get_arguments():
 
     parser.add_argument('mh', help='Meta-heuristic identifier', choices=['bmrfo', 'bpso'])
 
-    parser.add_argument('clf', help='Classifier identifier', choices=['opf'])
+    parser.add_argument('clf', help='Classifier identifier', choices=['dt', 'linear_svc', 'lr', 'nb', 'opf', 'rf', 'svc'])
 
     parser.add_argument('-n_agents', help='Number of meta-heuristic agents', type=int, default=10)
 

@@ -25,7 +25,7 @@ def get_arguments():
                                                                        'segment', 'semeion', 'sonar', 'spambase',
                                                                        'vehicle', 'wine'])
 
-    parser.add_argument('clf', help='Classifier identifier', choices=['opf'])
+    parser.add_argument('clf', help='Classifier identifier', choices=['dt', 'linear_svc', 'lr', 'nb', 'opf', 'rf', 'svc'])
 
     parser.add_argument('features', help='Selected features file', type=str)
 

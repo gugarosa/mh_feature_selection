@@ -36,9 +36,9 @@ def get_arguments():
                                                                          'sca', 'sfo', 'sos', 'ssa', 'ssd', 'sso', 'two',
                                                                          'woa', 'wwo'])
 
-    parser.add_argument('clf', help='Classifier identifier', choices=['opf'])
+    parser.add_argument('clf', help='Classifier identifier', choices=['dt', 'linear_svc', 'lr', 'nb', 'opf', 'rf', 'svc'])
 
-    parser.add_argument('transfer', help='Transfer function identifier', choices=['t1'])
+    parser.add_argument('transfer', help='Transfer function identifier', choices=['t1', 's1', 's2', 's3', 's4', 'v1', 'v2', 'v3', 'v4'])
 
     parser.add_argument('-n_agents', help='Number of meta-heuristic agents', type=int, default=10)
 

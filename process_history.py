@@ -19,7 +19,7 @@ def get_arguments():
 
     parser.add_argument('input_file', help='Optimization history file', type=str)
 
-    parser.add_argument('transfer', help='Transfer function identifier', choices=['t1'])
+    parser.add_argument('transfer', help='Transfer function identifier', choices=['t1', 's1', 's2', 's3', 's4', 'v1', 'v2', 'v3', 'v4'])
 
     return parser.parse_args()
 
